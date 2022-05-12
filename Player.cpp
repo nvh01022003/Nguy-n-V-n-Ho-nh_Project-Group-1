@@ -1,3 +1,4 @@
+#include "Person.cpp"
 class Player:public Person
 {
 	public:
