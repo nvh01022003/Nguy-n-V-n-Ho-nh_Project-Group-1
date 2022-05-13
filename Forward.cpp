@@ -1,7 +1,7 @@
 #include "Player.cpp"
-class Forward:public Player
+class Forward:private Player
 {
-	public:
+	private:
 		string escapeOffside, penaltyAble, combiWithOther;
 		int numOfGodenGoals;
 	Forward()
@@ -10,6 +10,15 @@ class Forward:public Player
 		numOfGodenGoals = 0;
 		penaltyAble = " ";
 		combiWithOther = " ";
+	}
+	void set_Name()
+	{
+		Person P = new Person();
+		this->P.fullName = P.fullName;
+	}
+	string get_Name()
+	{
+		return this->P.fullName;
 	}
 	void input()
 	{

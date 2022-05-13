@@ -1,7 +1,7 @@
 #include "Person.cpp"
-class Player:public Person
+class Player:private Person
 {
-	public:
+	private:
 		int numberOfShirt, Appearance, numOfYellowCard, numOfRedCard, techniqueStat, assistNumInSeason, goalsNumInSeason, assistNumInCareer, goalsNumInCareer;
 		float height, weight, speed, scoreAverage;
 		string injury, dutyInTeam, escapePressing, passingBall, shootBall, header, specialGoals;
@@ -27,6 +27,15 @@ class Player:public Person
 		assistNumInCareer = 0;
 		goalsNumInCareer = 0;
 		specialGoals = " ";
+	}
+	void set_Name()
+	{
+		Person P = new Person();
+		this->P.fullName = P.fullName;
+	}
+	string get_Name()
+	{
+		return this->P.fullName;
 	}
 	void input()
 	{
