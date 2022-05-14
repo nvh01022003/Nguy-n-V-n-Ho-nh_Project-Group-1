@@ -8,7 +8,7 @@ class Player:public Person
 	public:
 		void setInjury(string injury)
 			this->injury = injury;
-		string geIinjury(string injury)
+		string getInjury(string injury)
 			return this->injury;
 		void setDutyInTeam(string dutyInTeam)
 			this->dutyInTeam = dutyInTeam;
