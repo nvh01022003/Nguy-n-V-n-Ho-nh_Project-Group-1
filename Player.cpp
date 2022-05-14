@@ -6,89 +6,89 @@ class Player:public Person
 		float height, weight, speed, scoreAverage;
 		string injury, dutyInTeam, escapePressing, passingBall, shootBall, header, specialGoals;
 	public:
-		void setinjury()
+		void setInjury(string injury)
 			this->injury = injury;
-		string getinjury()
+		string geIinjury(string injury)
 			return this->injury;
-		void setdutyInTeam()
+		void setDutyInTeam(string dutyInTeam)
 			this->dutyInTeam = dutyInTeam;
-		string getdutyInTeam()
+		string getDutyInTeam(string dutyInTeam)
 			return this->dutyInTeam;
-		void setescapePressing()
+		void setEscapePressing(string escapePressing)
 			this->escapePressing = escapePressing;
-		string getescapePressing()
+		string getEscapePressing(string escapePressing)
  			return this->escapePressing;
-		void setpassingBall()
+		void setPassingBall(string passingBall)
 			this->passingBall = passingBall;
-		string getpassingBall()
+		string getPassingBall(string passingBall)
 			return this->passingBall;
-		void setshootBall()
+		void setShootBall(string shootBall)
 			this->shootBall = shootBall;
-		string getshootBall()
+		string getShootBall(string shootBall)
 			return this->shootBall;
-		void setheader()
+		void setHeader(string header)
 			this->header = header;
-		string getheader()
+		string getHeader(string header)
 			return this->header;
-		void setspecialGoals()
+		void setSpecialGoals(string specialGoals)
 			this->specialGoals = specialGoals;
-		string getspecialGoals()
+		string getSpecialGoals(string specialGoals)
 			return this->specialGoals;	
 
 
-		void setnumberOfShirt()
+		void setNumberOfShirt(int numberOfShirt)
 			this->numberOfShirt = numberOfShirt;
-		int getnumberOfShirt()
+		int getNumberOfShirt(int numberOfShirt)
 			return this->numberOfShirt;
-		void setAppearance()
+		void setAppearance(int Appearance)
 			this->Appearance = Appearance;
-		int getAppearance()
+		int getAppearance(int Appearance)
 			return this->Appearance;
-		void setnumOfYellowCard()
+		void setNumOfYellowCard(int numOfYellowCard)
 			this->numOfYellowCard = numOfYellowCard;
-		int getnumOfYellowCard()
+		int getNumOfYellowCard(int numOfYellowCard)
 			return this->numOfYellowCard;
-		void setnumOfRedCard()
+		void setNumOfRedCard(int numOfRedCard)
 			this->numOfRedCard = numOfRedCard;
-		int getnumOfRedCard()
+		int getNumOfRedCard(int numOfRedCard)
 			return this->numOfRedCard;
-		void settechniqueStat()
+		void setTechniqueStat(int techniqueStat)
 			this->techniqueStat = techniqueStat;
-		int gettechniqueStat()
+		int getTechniqueStat(int techniqueStat)
 			return this->techniqueStat;
-		void setassistNumInSeason()
+		void setAssistNumInSeason(int assistNumInSeason)
 			this->assistNumInSeason = assistNumInSeason;
-		int getassistNumInSeason()
+		int getAssistNumInSeason(int assistNumInSeason)
 			return this->assistNumInSeason;
-		void setgoalsNumInSeason()
+		void setGoalsNumInSeason(int goalsNumInSeason)
 			this->goalsNumInSeason = goalsNumInSeason;
-		int getgoalsNumInSeason()
+		int getGoalsNumInSeason(int goalsNumInSeason)
 			return this->goalsNumInSeason;
-		void setassistNumInCareer()
+		void setAssistNumInCareer(int assistNumInCareer)
 			this->assistNumInCareer = assistNumInCareer;
-		int getassistNumInCareer()
+		int getAssistNumInCareer(int assistNumInCareer)
 			return this->assistNumInCareer;
-		void setgoalsNumInCareer()
+		void setGoalsNumInCareer(int goalsNumInCareer)
 			this->goalsNumInCareer = goalsNumInCareer;
-		int getgoalsNumInCareer()
+		int getGoalsNumInCareer(int goalsNumInCareer)
 			return this->goalsNumInCareer;
 		
 		
-		void setheight()
+		void setHeight(float height)
 			this->height = height;
-		float getheight()
+		float getHeight(float height)
 			return this->height;
-		void setweight()
+		void setWeight(float weight)
 			this->weight = weight;
-		float getweight()
+		float getWeight(float weight)
 			return this->weight;
-		void setspeed()
+		void setSpeed(float speed)
 			this->speed = speed;
-		float getspeed()
+		float getSpeed(float speed)
 			return this->speed;
-		void setscoreAverage()
+		void setScoreAverage(float scoreAverage)
 			this->scoreAverage = scoreAverage;
-		float getscoreAverage()
+		float getScoreAverage(float scoreAverage)
 			return this->scoreAverage;				
 		
 																				

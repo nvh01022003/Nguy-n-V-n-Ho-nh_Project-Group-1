@@ -5,21 +5,21 @@ class Forward:public Player
 		string escapeOffside, penaltyAble, combiWithOther;
 		int numOfGodenGoals;
 	public:
-		void setescapeOffside()
+		void setEscapeOffside(string escapeOffside)
 			this->escapeOffside = escapeOffside;
-		string getescapeOffside()
+		string getEscapeOffside(string escapeOffside)
 			return this->escapeOffside;
-		void setpenaltyAble()
+		void setPenaltyAble(string penaltyAble)
 			this->penaltyAble = penaltyAble;
-		string getpenaltyAble()
+		string getPenaltyAble(string penaltyAble)
 			return this->penaltyAble;
-		void setcombiWithOther()
+		void setCombiWithOther(string combiWithOther)
 			this->combiWithOther = combiWithOther;
-		string getcombiWithOther()
+		string getCombiWithOther(string combiWithOther)
 			return this->combiWithOther;
-		void setnumOfGodenGoals()
+		void setNumOfGodenGoals(string numOfGodenGoals)
 			this->numOfGodenGoals = numOfGodenGoals;
-		int getnumOfGodenGoals()
+		int getNumOfGodenGoals(int numOfGodenGoals)
 			return this->numOfGodenGoals;		
 		Forward()
 		{
