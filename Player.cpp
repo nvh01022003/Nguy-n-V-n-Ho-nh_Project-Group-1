@@ -2,9 +2,26 @@
 class Player:public Person
 {
 	private:
-		int numberOfShirt, Appearance, numOfYellowCard, numOfRedCard, techniqueStat, assistNumInSeason, goalsNumInSeason, assistNumInCareer, goalsNumInCareer;
-		float height, weight, speed, scoreAverage;
-		string injury, dutyInTeam, escapePressing, passingBall, shootBall, header, specialGoals;
+		int numberOfShirt; // So ao dau
+		int Appearance; // So lan tham gia tran dau
+		int numOfYellowCard; // So the vang
+		int numOfRedCard; // So the do
+		int techniqueStat; // Chi so ki thuat
+		int assistNumInSeason; // So luong kien tao trong 1 mua
+		int goalsNumInSeason; // SO luong ban thang trong 1 mua
+		int assistNumInCareer; // So luong kien tao trong su nghiep cau thu
+		int goalsNumInCareer; // So luong ban thang trong su nghiep cau thu
+		float height; // Chieu cao
+		float weight; // Can nang
+		float speed; // Toc do
+		float scoreAverage; // Trung binh so ban thang
+		string injury; // Loai chan thuong
+		string dutyInTeam; // Vai tro trong doi bong
+		string escapePressing; // Kha nang thoat Pressing
+		string  passingBall; // Kha nang chuyen bong
+		string shootBall; // Kha nang sut bong
+		string header; // Kha nang lanh dao
+		string specialGoals; // Ban thang dac biet
 	public:
 		void setInjury(string injury)
 			this->injury = injury;
@@ -180,9 +197,10 @@ class Player:public Person
 		}
 		void longOrShortTermRest()
 		{
+			// injury
 			cout<<"--------------------------------------------------"<<endl;
 			cout<<"THE TIME NEED FOR THE TERM REST BECAUSE OF INJURY"<<endl;
-			if(this->injury == "ligament rupture" )
+			if(this->injury == "ligament rupture" )   
 				cout<<"2 months for the term rest(Long term rest)"<<endl;
 			else if(this->injury == "cotton fabric")
 				cout<<"1 moth for the term rest(Short term rest)"<<endl;
@@ -201,6 +219,7 @@ class Player:public Person
 			}
 		float numOfExpectedGoal()
 		{
+			// goalsNumInSeason & Appearance
 			float Num_Of_Expected_Goals;
 			cout<<"--------------------------------------------------"<<endl;
 			cout<<"==========The Number Of Expected Goals=========="<<endl;
@@ -209,6 +228,7 @@ class Player:public Person
 		}	
 		float numOfExpectedAssist()
 		{
+			// assistNumInSeason & Appearance
 			float Num_Of_Expected_Assists;
 			cout<<"--------------------------------------------------"<<endl;
 			cout<<"==========The Number Of Expected Assists=========="<<endl;

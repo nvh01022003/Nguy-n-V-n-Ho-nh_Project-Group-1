@@ -2,8 +2,10 @@
 class Forward:public Player
 {
 	private:
-		string escapeOffside, penaltyAble, combiWithOther;
-		int numOfGodenGoals;
+		string escapeOffside; // Kha nang thoat bay viet vi
+		string penaltyAble; // Kha nang sut pennalty
+		string combiWithOther; // Kha nang phoi hop voi cau thu khac
+		int numOfGodenGoals; // So luong ban thang vang
 	public:
 		void setEscapeOffside(string escapeOffside)
 			this->escapeOffside = escapeOffside;
@@ -55,6 +57,7 @@ class Forward:public Player
 		}
 		string mission()
 		{
+			// combiWithOther
 			cout<<"--------------------------------------------------"<<endl;
 			cout<<"==========The Forward's Mission=========="<<endl;	
 			cout<<"The main mission is score."<<endl;
@@ -64,6 +67,7 @@ class Forward:public Player
 		}
 		long calculateWage()
 		{
+			// escapeOffside & penaltyAble & combiWithOther & numOfGodenGoals
 			cout<<"--------------------------------------------------"<<endl;
 			cout<<"==========The Forward's Wage=========="<<endl;
 			long Wage,Salary,Bonus;
@@ -75,61 +79,72 @@ class Forward:public Player
 				Salary = 1000000;
 			else if(this->escapeOffside == "bad" && this->penaltyAble == "bad" && this->combiWithOther == "bad" && this->numOfGodenGoals <= 1)	
 				Salary = 300000;
-			if((this->escapeOffside == "good" || this->escapeOffside == "best") && (this->penaltyAble == "good" || this->penaltyAble == "best")&& (this->combiWithOther == "good" || this->combiWithOther == "best")&& this->numOfGodenGoals > 5)
+				
+			if(this->getGoalsNumInSeason() > 10  && this->getAssistNumInSeason()  > 8 && this->getScoreAverage() > 7 && this->numOfGodenGoals > 5)
 				Bonus = 1000000;
-			else if((this->escapeOffside == "good" || this->escapeOffside == "normal") && (this->penaltyAble == "good" || this->penaltyAble == "normal")&& (this->combiWithOther == "good" || this->combiWithOther == "normal")&& this->numOfGodenGoals > 3)	
+			else if(this->getGoalsNumInSeason() > 8  && this->getAssistNumInSeason()  > 6 && this->getScoreAverage() > 5 && this->numOfGodenGoals > 3)	
 				Bonus = 500000;
-			else if((this->escapeOffside == "bad" || this->escapeOffside == "normal") && (this->penaltyAble == "bad" || this->penaltyAble == "normal")&& (this->combiWithOther == "bad" || this->combiWithOther == "normal")&& this->numOfGodenGoals < 3)	
+			else if(this->getGoalsNumInSeason() > 6  && this->getAssistNumInSeason()  > 4 && this->getScoreAverage() > 3 && this->numOfGodenGoals > 2)	
 				Bonus = 100000;
-			else if(this->escapeOffside == "bad" && this->penaltyAble == "bad" && this->combiWithOther == "bad" && this->numOfGodenGoals <= 1)	
+			else if(this->getGoalsNumInSeason() > 4  && this->getAssistNumInSeason()  > 2 && this->getScoreAverage() > 2 && this->numOfGodenGoals > 2)	
+				Bonus = 50000;	
+			else if(this->getGoalsNumInSeason() == 0  && this->getAssistNumInSeason()  == 0 && this->getScoreAverage() == 0 && this->numOfGodenGoals < 2)	
 				Bonus = 0;
+							
 			Wage = Salary + Bonus;
 			return Wage;		
 		}
 		bool signingCondition()
 		{
-			if(this->escapeOffside == "bad" && this->penaltyAble == "bad" && this->combiWithOther == "bad" && this->numOfGodenGoals <3)
-				{
-					return false;
-					cout<<"Unsatisfactory!"<<endl;
-				}
+			// getGoalsNumInCareer & getAssistNumInCareer & getScoreAverage & numOfGodenGoals
+			if(this->getGoalsNumInCareer() == 0  && this->getAssistNumInCareer()  == 0 && this->getScoreAverage() == 0 && this->numOfGodenGoals < 2)
+				return false;
 			else
-				{ 
-					return true;
-					cout<<"On the team list!"<<endl;
-				}
+				return true;
+		}
+		
+		void ConditionSigning()
+		{
+			// signingCondition
+			if(this->signingCondition() == true)
+				cout<<"On the team list!"<<endl;
+			else
+				cout<<"Unsatisfactory!"<<endl;	
 		}
 		void riskOfTerminateContract()
 		{
+			// getGoalsNumInSeason & getAssistNumInSeason & getScoreAverage & numOfGodenGoals		
 			cout<<"--------------------------------------------------"<<endl;
-			cout<<"==========Risk Of Contract Termination Of Forward=========="<<endl;
-			if(this->escapeOffside == "bad" && this->penaltyAble == "bad" && this->combiWithOther == "bad" && this->numOfGodenGoals <3)
+			cout<<"==========Risk Of Contract Termination Of Forward=========="<<endl;			
+			if(this->getGoalsNumInSeason() == 0  && this->getAssistNumInSeason()  == 0 && this->getScoreAverage() == 0 && this->numOfGodenGoals < 2)
 				cout<<"The risk of contract termination is absolutely happen!"<<endl;
-			else if(this->escapeOffside == "normal" || this->penaltyAble == "normal" || this->combiWithOther == "normal" && this->numOfGodenGoals == 3)
+			else if(this->getGoalsNumInSeason() > 4  && this->getAssistNumInSeason()  > 2 && this->getScoreAverage() > 2 && this->numOfGodenGoals > 2)
 				cout<<"The risk of contract termination is maybe happen!"<<endl;
-			else if((this->escapeOffside == "good" || this->escapeOffside == "best") && (this->penaltyAble == "good" || this->penaltyAble == "best")&& (this->combiWithOther == "good" || this->combiWithOther == "best")&& this->numOfGodenGoals > 5)
+			else if(this->getGoalsNumInSeason() > 6  && this->getAssistNumInSeason()  > 4 && this->getScoreAverage() > 3 && this->numOfGodenGoals > 2)
 				cout<<"There have no for risking of contract termination!"<<endl;
 		}
 		void oppRenewContract()
 		{
+			// getGoalsNumInSeason & getAssistNumInSeason & getScoreAverage & numOfGodenGoals		
 			cout<<"--------------------------------------------------"<<endl;
-			cout<<"==========Ability To Opperate Renewable Contract Of Forward=========="<<endl;
-			if((this->escapeOffside == "good" || this->escapeOffside == "best") && (this->penaltyAble == "good" || this->penaltyAble == "best")&& (this->combiWithOther == "good" || this->combiWithOther == "best")&& this->numOfGodenGoals > 5)
+			cout<<"==========Ability To Opperate Renewable Contract Of Forward=========="<<endl;		
+			if(this->getGoalsNumInSeason() > 6  && this->getAssistNumInSeason()  > 4 && this->getScoreAverage() > 3 && this->numOfGodenGoals > 2)
 				cout<<"The opperated renewable contract is absolutely happen!"<<endl;
-			else if(this->escapeOffside == "normal" || this->penaltyAble == "normal" || this->combiWithOther == "normal" && this->numOfGodenGoals < 5)
+			else if(this->getGoalsNumInSeason() > 4  && this->getAssistNumInSeason()  > 2 && this->getScoreAverage() > 2 && this->numOfGodenGoals > 2)
 				cout<<"The opperated renewable contract is uncertain!"<<endl;
-			else if(this->escapeOffside == "bad" && this->penaltyAble == "bad" && this->combiWithOther == "bad" && this->numOfGodenGoals <3)
+			else if(this->getGoalsNumInSeason() == 0  && this->getAssistNumInSeason()  == 0 && this->getScoreAverage() == 0 && this->numOfGodenGoals < 2)
 				cout<<"There have no for opperating renewable contract!"<<endl;
 		}
 		void valueBringingLastSeason()
 		{
+			// getEscapePressing & getPassingBall & getShootBall & getHeader & getSpecialGoals		
 			cout<<"--------------------------------------------------"<<endl;
 			cout<<"==========Value Bringing Last Season Of Forward=========="<<endl;
-			if(this->escapeOffside == "best" && this->penaltyAble == "best" && this->combiWithOther == "best" && this->numOfGodenGoals >= 10)
+			if(this->getEscapePressing() == "best" && this->getPassingBall() == "best" && this->getShootBall() == "best" && this->getHeader() == "best" && this->getSpecialGoals() == "best")
 				cout<<"The value bringing last season is the CHAMPIONSHIP of the Season belong to the Team!"<<endl;
 				cout<<"The BEST player in this season!"<<endl;
 				cout<<"Being on the list to receive THE GODEN BALL!"<<endl;
-			if((this->escapeOffside != "good" || this->escapeOffside != "best") && (this->penaltyAble != "good" || this->penaltyAble != "best")&& (this->combiWithOther != "good" || this->combiWithOther != "best")&& this->numOfGodenGoals < 10)
+			if((this->getEscapePressing() != "good" || this->getEscapePressing() != "best") && (this->getPassingBall() != "good" || this->getPassingBall() != "best")&& (this->getShootBall() != "good" || this->getShootBall() != "best")&& (this->getHeader() != "good" || this->getHeader() != "best") && (this->getSpecialGoals() != "good" || this->getSpecialGoals() != "best"))
 				cout<<"There have no value for bringing to the Team in last season!"<<endl;
 		}		
 };
