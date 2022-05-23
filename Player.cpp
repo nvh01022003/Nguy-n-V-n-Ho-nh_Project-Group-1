@@ -23,91 +23,130 @@ class Player:public Person
 		string header; // Kha nang lanh dao
 		string specialGoals; // Ban thang dac biet
 	public:
-		void setInjury(string injury)
+		void setInjury(string injury){
 			this->injury = injury;
-		string getInjury(string injury)
+		}
+		string getInjury(string injury){
 			return this->injury;
-		void setDutyInTeam(string dutyInTeam)
+		}			
+		void setDutyInTeam(string dutyInTeam){
 			this->dutyInTeam = dutyInTeam;
-		string getDutyInTeam(string dutyInTeam)
+		}
+		string getDutyInTeam(string dutyInTeam){
 			return this->dutyInTeam;
-		void setEscapePressing(string escapePressing)
+		}			
+		void setEscapePressing(string escapePressing){
 			this->escapePressing = escapePressing;
-		string getEscapePressing(string escapePressing)
- 			return this->escapePressing;
-		void setPassingBall(string passingBall)
+		}
+		string getEscapePressing(string escapePressing){
+			return this->escapePressing;
+		}			
+		void setPassingBall(string passingBall){
 			this->passingBall = passingBall;
-		string getPassingBall(string passingBall)
+		}			
+		string getPassingBall(string passingBall){
 			return this->passingBall;
-		void setShootBall(string shootBall)
+		}			
+		void setShootBall(string shootBall){
 			this->shootBall = shootBall;
-		string getShootBall(string shootBall)
+		}		
+		string getShootBall(string shootBall){
 			return this->shootBall;
-		void setHeader(string header)
+		}		
+		void setHeader(string header){
 			this->header = header;
-		string getHeader(string header)
+		}			
+		string getHeader(string header){
 			return this->header;
-		void setSpecialGoals(string specialGoals)
+		}			
+		void setSpecialGoals(string specialGoals){
 			this->specialGoals = specialGoals;
-		string getSpecialGoals(string specialGoals)
+		}			
+		string getSpecialGoals(string specialGoals){
 			return this->specialGoals;	
+		}			
 
 
-		void setNumberOfShirt(int numberOfShirt)
+		void setNumberOfShirt(int numberOfShirt){
 			this->numberOfShirt = numberOfShirt;
-		int getNumberOfShirt(int numberOfShirt)
+		}			
+		int getNumberOfShirt(int numberOfShirt){
 			return this->numberOfShirt;
-		void setAppearance(int Appearance)
+		}			
+		void setAppearance(int Appearance){
 			this->Appearance = Appearance;
-		int getAppearance(int Appearance)
+		}			
+		int getAppearance(int Appearance){
 			return this->Appearance;
-		void setNumOfYellowCard(int numOfYellowCard)
+		}			
+		void setNumOfYellowCard(int numOfYellowCard){
 			this->numOfYellowCard = numOfYellowCard;
-		int getNumOfYellowCard(int numOfYellowCard)
+		}			
+		int getNumOfYellowCard(int numOfYellowCard){
 			return this->numOfYellowCard;
-		void setNumOfRedCard(int numOfRedCard)
+		}			
+		void setNumOfRedCard(int numOfRedCard){
 			this->numOfRedCard = numOfRedCard;
-		int getNumOfRedCard(int numOfRedCard)
+		}			
+		int getNumOfRedCard(int numOfRedCard){
 			return this->numOfRedCard;
-		void setTechniqueStat(int techniqueStat)
+		}			
+		void setTechniqueStat(int techniqueStat){
 			this->techniqueStat = techniqueStat;
-		int getTechniqueStat(int techniqueStat)
+		}					
+		int getTechniqueStat(int techniqueStat){
 			return this->techniqueStat;
-		void setAssistNumInSeason(int assistNumInSeason)
+		}			
+		void setAssistNumInSeason(int assistNumInSeason){
 			this->assistNumInSeason = assistNumInSeason;
-		int getAssistNumInSeason(int assistNumInSeason)
+		}			
+		int getAssistNumInSeason(int assistNumInSeason){
 			return this->assistNumInSeason;
-		void setGoalsNumInSeason(int goalsNumInSeason)
+		}			
+		void setGoalsNumInSeason(int goalsNumInSeason){
 			this->goalsNumInSeason = goalsNumInSeason;
-		int getGoalsNumInSeason(int goalsNumInSeason)
+		}			
+		int getGoalsNumInSeason(int goalsNumInSeason){
 			return this->goalsNumInSeason;
-		void setAssistNumInCareer(int assistNumInCareer)
+		}			
+		void setAssistNumInCareer(int assistNumInCareer){
 			this->assistNumInCareer = assistNumInCareer;
-		int getAssistNumInCareer(int assistNumInCareer)
+		}			
+		int getAssistNumInCareer(int assistNumInCareer){
 			return this->assistNumInCareer;
-		void setGoalsNumInCareer(int goalsNumInCareer)
+		}			
+		void setGoalsNumInCareer(int goalsNumInCareer){
 			this->goalsNumInCareer = goalsNumInCareer;
-		int getGoalsNumInCareer(int goalsNumInCareer)
+		}			
+		int getGoalsNumInCareer(int goalsNumInCareer){
 			return this->goalsNumInCareer;
+		}			
 		
 		
-		void setHeight(float height)
+		void setHeight(float height){
 			this->height = height;
-		float getHeight(float height)
+		}			
+		float getHeight(float height){
 			return this->height;
-		void setWeight(float weight)
+		}			
+		void setWeight(float weight){
 			this->weight = weight;
-		float getWeight(float weight)
+		}			
+		float getWeight(float weight){
 			return this->weight;
-		void setSpeed(float speed)
+		}			
+		void setSpeed(float speed){
 			this->speed = speed;
-		float getSpeed(float speed)
+		}			
+		float getSpeed(float speed){
 			return this->speed;
-		void setScoreAverage(float scoreAverage)
+		}			
+		void setScoreAverage(float scoreAverage){
 			this->scoreAverage = scoreAverage;
-		float getScoreAverage(float scoreAverage)
-			return this->scoreAverage;				
-		
+		}			
+		float getScoreAverage(float scoreAverage){
+			return this->scoreAverage;		
+		}
 																				
 		Player()
 		{

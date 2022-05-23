@@ -7,22 +7,30 @@ class Forward:public Player
 		string combiWithOther; // Kha nang phoi hop voi cau thu khac
 		int numOfGodenGoals; // So luong ban thang vang
 	public:
-		void setEscapeOffside(string escapeOffside)
+		void setEscapeOffside(string escapeOffside){
 			this->escapeOffside = escapeOffside;
-		string getEscapeOffside(string escapeOffside)
+		}			
+		string getEscapeOffside(string escapeOffside){
 			return this->escapeOffside;
-		void setPenaltyAble(string penaltyAble)
+		}			
+		void setPenaltyAble(string penaltyAble){
 			this->penaltyAble = penaltyAble;
-		string getPenaltyAble(string penaltyAble)
+		}			
+		string getPenaltyAble(string penaltyAble){
 			return this->penaltyAble;
-		void setCombiWithOther(string combiWithOther)
+		}			
+		void setCombiWithOther(string combiWithOther){
 			this->combiWithOther = combiWithOther;
-		string getCombiWithOther(string combiWithOther)
+		}			
+		string getCombiWithOther(string combiWithOther){
 			return this->combiWithOther;
-		void setNumOfGodenGoals(string numOfGodenGoals)
+		}			
+		void setNumOfGodenGoals(int numOfGodenGoals){
 			this->numOfGodenGoals = numOfGodenGoals;
-		int getNumOfGodenGoals(int numOfGodenGoals)
-			return this->numOfGodenGoals;		
+		}			
+		int getNumOfGodenGoals(int numOfGodenGoals){
+			return this->numOfGodenGoals;
+		}		
 		Forward()
 		{
 			escapeOffside = " ";
