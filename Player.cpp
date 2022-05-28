@@ -239,19 +239,19 @@ class Player:public Person
 			// injury
 			cout<<"--------------------------------------------------"<<endl;
 			cout<<"THE TIME NEED FOR THE TERM REST BECAUSE OF INJURY"<<endl;
-			if(this->injury == "ligament rupture" )   
+			if(this->injury == "ligament rupture" )   // dut day chang
 				cout<<"2 months for the term rest(Long term rest)"<<endl;
-			else if(this->injury == "cotton fabric")
+			else if(this->injury == "sprain")  // bong gan
 				cout<<"1 moth for the term rest(Short term rest)"<<endl;
-			else if(this->injury == "tendinitis")
+			else if(this->injury == "tendinitis")  // viem gan
 				cout<<"1.5 months for the term rest(Long term rest)"<<endl;
-			else if(this->injury == "fracture")
+			else if(this->injury == "fracture")  // gay xuong
 				cout<<"from 6 months to 1 year for the term rest(Long term rest)"<<endl;
-			else if(this->injury == "muscle injury")
+			else if(this->injury == "muscle injury")  // chan thuong co
 				cout<<"1 month for the term rest(Short term rest)"<<endl;
-			else if(this->injury == "tear cartilage")
+			else if(this->injury == "tear cartilage")  // rach sun
 				cout<<"2 months for the term rest(Long term rest)"<<endl;
-			else if(this->injury == "minor injury")
+			else if(this->injury == "minor injury")  // chan thuong nhe
 				cout<<"from 1 to 2 weeks for the term rest(Short term rest)"<<endl;
 			else 
 				cout<<"NO TERM REST"<<endl;			
