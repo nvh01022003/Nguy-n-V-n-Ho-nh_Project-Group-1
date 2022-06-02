@@ -2,6 +2,8 @@
 #include<algorithm>
 #include<vector>
 #include<fstream> 
+#include<string.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 class FootballClub {
@@ -108,8 +110,9 @@ class FootballClub {
 //	virtual bool signingCondition() = 0;
 //	virtual void riskOfTerminateContract() = 0;
 //	virtual void oppRenewContract() = 0;
+//	virtual bool valueBringingLastSeason() = 0;
 };
-class Person:public FootballClub {
+class Person : public FootballClub {
 	private : 
 		int idCardNumber ;
 		string fullName ;
@@ -148,30 +151,45 @@ class Person:public FootballClub {
 			this->age=0;
 			this->salary=0;
 		} 
+		string chuanHoaTen(string name) {
+			string s = "";
+			stringstream st(name);
+			string token;
+			while(st>>token) {
+			s += toupper(token[0]);
+			for(int i=1 ; i<token.length() ; i++) {
+				s += tolower(token[i]);
+			}
+			s += " ";
+			}
+			s.erase(s.length()-1);
+			name = s;
+			return name;
+		}
 		
 		void input () {
-		FootballClub::input() ;
-		cout<<"CardNumber :" ;
-		cin>>this->idCardNumber ;
-		cin.ignore();
-		cout<<"Full name :" ;
-		getline(cin,this->fullName) ;
-		cout<<"Age :" ;
-		cin>>this->age ;
-		cout<<"Salary :" ;
-		cin>>this->salary ;
-		
+			FootballClub::input() ;
+			cout<<"\nCardNumber : " ;
+			cin>>this->idCardNumber;
+			cin.ignore();
+			cout<<"\nFull name : " ;
+			getline(cin,this->fullName) ;
+			this->setFullName(this->chuanHoaTen(this->fullName));
+			cout<<"\nAge : " ;
+			cin>>this->age ;
+			cout<<"\nSalary : " ;
+			cin>>this->salary ;
 		} 
 		void output() {
-		FootballClub::output() ; 
-		cout<<"CardNumber :"<<this->idCardNumber<<"\n";
-		cout<<"Full Name :" <<this->fullName <<"\n" ;
-		cout<<"Age :" <<this->age<<"\n" ;
-		cout<<"Salary :"<<this->salary<<"\n" ;
-		
+			FootballClub::output() ; 
+			cout<<"\nCard Number : "<<this->idCardNumber<<"\n";
+			cout<<"\nFull Name : " <<this->fullName <<"\n" ;
+			cout<<"\nAge : " <<this->age<<"\n" ;
+			cout<<"\nSalary : "<<this->salary<<"\n" ;
 		} 
+		
 	   
-};
+}; 
 class Player:public Person
 {
 	private:
@@ -357,7 +375,7 @@ class Player:public Person
 		{
 			cout<<"INPUT THE PLAYER'S INFORMATION'"<<endl;
 			Person::input();
-			cout<<"Number of shirt: ";
+			cout<<"Number of shirt(1-25): ";
 			cin>>numberOfShirt;
 			cout<<"Height: ";
 			cin>>height;
@@ -365,7 +383,7 @@ class Player:public Person
 			cin>>weight;
 			cout<<"Speed: ";
 			cin>>speed;
-			cout<<"The average of score: ";
+			cout<<"The average of score(1-10): ";
 			cin>>scoreAverage;
 			cout<<"Injury: ";
 			cin.ignore();
@@ -379,7 +397,7 @@ class Player:public Person
 			cout<<"The duty in Team: ";
 			cin.ignore();
 			getline(cin,dutyInTeam);
-			cout<<"The technique stat: ";
+			cout<<"The technique stat(1-4): ";
 			cin>>techniqueStat;
 			cout<<"The escapation of Pressing: ";
 			cin.ignore();
@@ -651,10 +669,50 @@ class Forward:public Player
 			}else{
 				cout<<"Error!!!"<<endl;
 			}
-		 }
+		}
+		void checkForward()
+		{
+		
+			string checkName;
+			cout<<"Input the player who you want to find information: ";
+			cin.ignore();
+			getline(cin,checkName);
+			int n;
+ 			cout<<"Nhap n: ";
+ 			cin>>n;
+			int find = 0;
+			for(int i=0;i<v.size();i++)
+				{
+					if(checkName == v[i].getFullName())
+					{
+						cout<<"Name: "<<v[i].getFullName()<<endl;
+						cout<<"Age: "<<v[i].getAge()<<endl;
+						cout<<"Height: "<<v[i].getHeight()<<endl;
+						cout<<"Weight: "<<v[i].getWeight()<<endl;
+						cout<<"Position: "<<v[i].getPosition()<<endl;
+						find = i;	
+					}
+				}
+			ofstream fo;
+			fo.open("E:\\new.txt");
+			if(fo.is_open())
+			{
+				fo<<"Output the player's information you want to find: "<<endl;
+				fo<<"Name: "<<v[find].getFullName()<<endl;
+				fo<<"Age: "<<v[find].getAge()<<endl;
+				fo<<"Height: "<<v[find].getHeight()<<endl;
+				fo<<"Weight: "<<v[find].getWeight()<<endl;
+				fo<<"Position: "<<v[find].getPosition()<<endl;
+			fo.close();
+			}else
+			{
+				cout<<"The player who you want to find are not in team!"<<endl;
+			}
+		}
  };
 int main() {
 	listForward l;
 	l.inputlist();
+	l.checkForward();
 	return 0;
 }
