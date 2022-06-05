@@ -74,8 +74,11 @@ class FootballClub {
 			return this->contractTerm;
 		}
 	FootballClub(){
-		this->idMembers = " ";
-		this->contractTerm = " ";
+	
+	} 
+	FootballClub(string idMembers,string contractTerm ) {
+		this->idMembers=idMembers ;
+		this->contractTerm=contractTerm;
 	}
 	void input(){
 		cout<<"Enter the ID.Members: ";
@@ -146,11 +149,15 @@ class Person : public FootballClub {
 		} 
 
 		Person() {
-			this->idCardNumber=0;
-			this->fullName="" ;
-			this->age=0;
-			this->salary=0;
-		} 
+		
+		}  
+		Person(string idMembers,string contractTerm,int idCardNumber,string fullName,int age,long long salary) : FootballClub(idMembers,contractTerm){
+			this->idCardNumber=idCardNumber;
+			this->fullName=fullName ;
+			this->age=age ;
+			this->salary=salary ;
+			
+		}
 		string chuanHoaTen(string name) {
 			string s = "";
 			stringstream st(name);
@@ -200,19 +207,9 @@ class Player:public Person
 		int techniqueStat; // Chi so ki thuat
 		int assistNumInSeason; // So luong kien tao trong 1 mua
 		int goalsNumInSeason; // SO luong ban thang trong 1 mua
-		int assistNumInCareer; // So luong kien tao trong su nghiep cau thu
-		int goalsNumInCareer; // So luong ban thang trong su nghiep cau thu
 		float height; // Chieu cao
 		float weight; // Can nang
-		float speed; // Toc do
-		float scoreAverage; // Trung binh so ban thang
 		string injury; // Loai chan thuong
-		string dutyInTeam; // Vai tro trong doi bong
-		string escapePressing; // Kha nang thoat Pressing
-		string  passingBall; // Kha nang chuyen bong
-		string shootBall; // Kha nang sut bong
-		string header; // Kha nang lanh dao
-		string specialGoals; // Ban thang dac biet
 		string position; // vi tri
 	public:
 		void setInjury(string injury){
@@ -220,43 +217,7 @@ class Player:public Person
 		}
 		string getInjury(){
 			return this->injury;
-		}			
-		void setDutyInTeam(string dutyInTeam){
-			this->dutyInTeam = dutyInTeam;
-		}
-		string getDutyInTeam(){
-			return this->dutyInTeam;
-		}			
-		void setEscapePressing(string escapePressing){
-			this->escapePressing = escapePressing;
-		}
-		string getEscapePressing(){
-			return this->escapePressing;
-		}			
-		void setPassingBall(string passingBall){
-			this->passingBall = passingBall;
-		}			
-		string getPassingBall(){
-			return this->passingBall;
-		}			
-		void setShootBall(string shootBall){
-			this->shootBall = shootBall;
-		}		
-		string getShootBall(){
-			return this->shootBall;
-		}		
-		void setHeader(string header){
-			this->header = header;
-		}			
-		string getHeader(){
-			return this->header;
-		}			
-		void setSpecialGoals(string specialGoals){
-			this->specialGoals = specialGoals;
-		}			
-		string getSpecialGoals(){
-			return this->specialGoals;	
-		}		
+		}					
 		void setPosition(string position)
 		{
 			this->position = position;
@@ -265,8 +226,6 @@ class Player:public Person
 		{
 			return this->position;
 		}
-
-
 		void setNumberOfShirt(int numberOfShirt){
 			this->numberOfShirt = numberOfShirt;
 		}			
@@ -308,21 +267,7 @@ class Player:public Person
 		}			
 		int getGoalsNumInSeason(){
 			return this->goalsNumInSeason;
-		}			
-		void setAssistNumInCareer(int assistNumInCareer){
-			this->assistNumInCareer = assistNumInCareer;
-		}			
-		int getAssistNumInCareer(){
-			return this->assistNumInCareer;
-		}			
-		void setGoalsNumInCareer(int goalsNumInCareer){
-			this->goalsNumInCareer = goalsNumInCareer;
-		}			
-		int getGoalsNumInCareer(){
-			return this->goalsNumInCareer;
-		}			
-		
-		
+		}								
 		void setHeight(float height){
 			this->height = height;
 		}			
@@ -334,42 +279,23 @@ class Player:public Person
 		}			
 		float getWeight(){
 			return this->weight;
-		}			
-		void setSpeed(float speed){
-			this->speed = speed;
-		}			
-		float getSpeed(){
-			return this->speed;
-		}			
-		void setScoreAverage(float scoreAverage){
-			this->scoreAverage = scoreAverage;
-		}			
-		float getScoreAverage(){
-			return this->scoreAverage;		
-		}
+		}						
+	
 																				
-		Player()
-		{
-			numberOfShirt = 0;
-			height = 0;
-			weight = 0;	
-			speed = 0;
-			scoreAverage = 0;
-			injury = " ";
-			Appearance = 0;
-			numOfYellowCard = 0;
-			numOfRedCard = 0;
-			dutyInTeam = " ";
-			techniqueStat = 0;
-			escapePressing = " ";
-			passingBall = " ";
-			shootBall = " ";
-			header = " ";
-			assistNumInSeason = 0;
-			goalsNumInSeason = 0;
-			assistNumInCareer = 0;
-			goalsNumInCareer = 0;
-			specialGoals = " ";
+		Player() {
+		} 
+		Player(	string idMembers,string contractTerm,int idCardNumber,string fullName,int age,long long salary,int numberOfShirt,int Appearance,int numOfYellowCard,int numOfRedCard,int techniqueStat,int assistNumInSeason,int goalsNumInSeason,float height,float weight,string injury,string position) :Person(idMembers, contractTerm,idCardNumber, fullName, age, salary)
+		{	
+	     this->numberOfShirt=numberOfShirt ;
+	     this->Appearance=Appearance ;
+	     this->numOfYellowCard=numOfYellowCard ;
+	     this->numOfRedCard=numOfRedCard ;
+	     this->techniqueStat=techniqueStat;
+	     this->assistNumInSeason=assistNumInSeason ;
+	     this->goalsNumInSeason=goalsNumInSeason ;
+	     this->height=height;
+	     this->weight=weight ;
+	     this->injury=injury ;
 		}
 		void input()
 		{
@@ -381,10 +307,6 @@ class Player:public Person
 			cin>>height;
 			cout<<"Weight: ";
 			cin>>weight;
-			cout<<"Speed: ";
-			cin>>speed;
-			cout<<"The average of score(1-10): ";
-			cin>>scoreAverage;
 			cout<<"Injury: ";
 			cin.ignore();
 			getline(cin,injury);
@@ -394,31 +316,10 @@ class Player:public Person
 			cin>>numOfYellowCard;
 			cout<<"Number of Red Card: ";
 			cin>>numOfRedCard;
-			cout<<"The duty in Team: ";
-			cin.ignore();
-			getline(cin,dutyInTeam);
-			cout<<"The technique stat(1-4): ";
-			cin>>techniqueStat;
-			cout<<"The escapation of Pressing: ";
-			cin.ignore();
-			getline(cin,escapePressing);
-			cout<<"The passing Ball: ";
-			getline(cin,passingBall);
-			cout<<"The ability of shooting Ball: ";
-			getline(cin,shootBall);
-			cout<<"The header: ";
-			getline(cin,header);
 			cout<<"The number of assistance in Season: ";
 			cin>>assistNumInSeason;
 			cout<<"The number of goals in Season: ";
-			cin>>goalsNumInSeason;
-			cout<<"The number of assistance in Career: ";
-			cin>>assistNumInCareer;
-			cout<<"The number of goals in Career: ";
-			cin>>goalsNumInCareer;
-			cout<<"The special goals: ";
-			cin.ignore();
-			getline(cin,specialGoals);	
+			cin>>goalsNumInSeason;	
 			cout<<"Position: ";
 			getline(cin,position);		
 		}
@@ -427,14 +328,11 @@ class Player:public Person
 			cout<<"--------------------------------------------------"<<endl;
 			cout<<"                         OUTPUT THE PLAYER'S INFORMATION'"<<endl;
 			Person::output();
-			cout<<"Number of shirt: "<<numberOfShirt<<"  "<<"Height: "<<height<<"  "<<"Weight: "<<weight<<"  "<<"Speed: "<<speed<<endl;                
-			cout<<"The average of score: "<<scoreAverage<<"  "<<"Injury: "<<injury<<"  "<<"Appearance: "<<Appearance<<endl;
-			cout<<"Number of Yellow Card: "<<numOfYellowCard<<"  "<<"Number of Red Card: "<<numOfRedCard<<"  "<<"The duty in Team: "<<dutyInTeam<<endl;
-			cout<<"The technique stat: "<<techniqueStat<<"  "<<"The escapation of Pressing: "<<escapePressing<<"  "<<"The passing Ball: "<<passingBall<<endl;
-			cout<<"The ability of shooting Ball: "<<shootBall<<"  "<<"The header: "<<header<<"  "<<endl;
-			cout<<"The number of assistance in Season: "<<assistNumInSeason<<"  "<<"The number of goals in Season: "<<goalsNumInSeason<<endl;
-			cout<<"The number of assistance in Career: "<<assistNumInCareer<<"  "<<"The number of goals in Career: "<<goalsNumInCareer<<endl;
-			cout<<"The special goals: "<<specialGoals<<" "<<"Position: "<<position<<endl;		
+			cout<<"Number of shirt: "<<numberOfShirt<<"  "<<"Height: "<<height<<"  "<<"Weight: "<<weight<<endl;                
+			cout<<"Injury: "<<injury<<"  "<<"Appearance: "<<Appearance<<endl;
+			cout<<"Number of Yellow Card: "<<numOfYellowCard<<"  "<<"Number of Red Card: "<<numOfRedCard<<"  "<<endl;
+			cout<<"The technique stat: "<<techniqueStat<<endl;
+			cout<<"The number of assistance in Season: "<<assistNumInSeason<<"  "<<"The number of goals in Season: "<<goalsNumInSeason<<endl;		
 		}
 		void longOrShortTermRest()
 		{
@@ -512,10 +410,13 @@ class Forward:public Player
 		}					
 		Forward()
 		{
-			escapeOffside = " ";
-			numOfGodenGoals = 0;
-			penaltyAble = " ";
-			combiWithOther = " ";
+		
+		} 
+		Forward(string idMembers,string contractTerm,int idCardNumber,string fullName,int age,long long salary,int numberOfShirt,int Appearance,int numOfYellowCard,int numOfRedCard,int techniqueStat,int assistNumInSeason,int goalsNumInSeason,float height,float weight,string injury,string position,string escapeOffside,	string penaltyAble,	string combiWithOther,	int numOfGodenGoals):Player(idMembers,contractTerm,idCardNumber,fullName,age,salary,numberOfShirt,Appearance,numOfYellowCard,numOfRedCard,techniqueStat,assistNumInSeason,goalsNumInSeason,height,weight,injury,position) {
+		this->escapeOffside=escapeOffside ;
+		this->penaltyAble=penaltyAble ;
+		this->combiWithOther=combiWithOther ;
+		this->numOfGodenGoals=numOfGodenGoals;
 		}
 		void input()
 		{
@@ -552,7 +453,7 @@ class Forward:public Player
 			if(this->combiWithOther == "good" || this->combiWithOther == "best")
 				cout<<"Sometimes the Forward can assist for Midfielder to score."<<endl;
 		}
-		double calculateWage()
+		long long calculateWage()
 		{
 			// escapeOffside & penaltyAble & combiWithOther & numOfGodenGoals
 			cout<<"--------------------------------------------------"<<endl;
@@ -566,16 +467,16 @@ class Forward:public Player
 				Salary = 1000000;
 			else if(this->escapeOffside == "bad" && this->penaltyAble == "bad" && this->combiWithOther == "bad" && this->numOfGodenGoals <= 1)	
 				Salary = 300000;
-			// 	getGoalsNumInSeason & getAssistNumInSeason & getScoreAverage & numOfGodenGoals
-			if(this->getGoalsNumInSeason() > 10  && this->getAssistNumInSeason()  > 8 && this->getScoreAverage() > 7 && this->numOfGodenGoals > 5)
+			// 	getGoalsNumInSeason & getAssistNumInSeason 
+			if(this->getGoalsNumInSeason() > 10  && this->getAssistNumInSeason()  > 8 )
 				Bonus = 1000000;
-			else if(this->getGoalsNumInSeason() > 8  && this->getAssistNumInSeason()  > 6 && this->getScoreAverage() > 5 && this->numOfGodenGoals > 3)	
+			else if(this->getGoalsNumInSeason() > 8  && this->getAssistNumInSeason()  > 6 )	
 				Bonus = 500000;
-			else if(this->getGoalsNumInSeason() > 6  && this->getAssistNumInSeason()  > 4 && this->getScoreAverage() > 3 && this->numOfGodenGoals > 2)	
+			else if(this->getGoalsNumInSeason() > 6  && this->getAssistNumInSeason()  > 4 )	
 				Bonus = 100000;
-			else if(this->getGoalsNumInSeason() > 4  && this->getAssistNumInSeason()  > 2 && this->getScoreAverage() > 2 && this->numOfGodenGoals > 2)	
+			else if(this->getGoalsNumInSeason() > 4  && this->getAssistNumInSeason()  > 2 )	
 				Bonus = 50000;	
-			else if(this->getGoalsNumInSeason() == 0  && this->getAssistNumInSeason()  == 0 && this->getScoreAverage() == 0 && this->numOfGodenGoals < 2)	
+			else if(this->getGoalsNumInSeason() == 0  && this->getAssistNumInSeason()  == 0)	
 				Bonus = 0;
 							
 			Wage = Salary + Bonus;
@@ -584,8 +485,8 @@ class Forward:public Player
 
 		bool signingCondition()
 		{
-			// getGoalsNumInCareer & getAssistNumInCareer & getScoreAverage & numOfGodenGoals
-			if(this->getGoalsNumInCareer() == 0  && this->getAssistNumInCareer()  == 0 && this->getScoreAverage() == 0 && this->numOfGodenGoals < 2)
+			// getGoalsNumInCareer & getAssistNumInCareer
+			if(this->getGoalsNumInSeason() == 0  && this->getAssistNumInSeason()  == 0 )
 				return false;
 			else
 				return true;
@@ -602,49 +503,38 @@ class Forward:public Player
 
 		void riskOfTerminateContract()
 		{
-			// getGoalsNumInSeason & getAssistNumInSeason & getScoreAverage & numOfGodenGoals		
+			// getGoalsNumInSeason & getAssistNumInSeason		
 			cout<<"--------------------------------------------------"<<endl;
 			cout<<"==========Risk Of Contract Termination Of Forward=========="<<endl;			
-			if(this->getGoalsNumInSeason() == 0  && this->getAssistNumInSeason()  == 0 && this->getScoreAverage() == 0 && this->numOfGodenGoals < 2)
+			if(this->getGoalsNumInSeason() == 0  && this->getAssistNumInSeason()  == 0 )
 				cout<<"The risk of contract termination is absolutely happen!"<<endl;
-			else if(this->getGoalsNumInSeason() > 4  && this->getAssistNumInSeason()  > 2 && this->getScoreAverage() > 2 && this->numOfGodenGoals > 2)
+			else if(this->getGoalsNumInSeason() > 4  && this->getAssistNumInSeason()  > 2 )
 				cout<<"The risk of contract termination is maybe happen!"<<endl;
-			else if(this->getGoalsNumInSeason() > 6  && this->getAssistNumInSeason()  > 4 && this->getScoreAverage() > 3 && this->numOfGodenGoals > 2)
+			else if(this->getGoalsNumInSeason() > 6  && this->getAssistNumInSeason()  > 4 )
 				cout<<"There have no for risking of contract termination!"<<endl;
 		}
 		void oppRenewContract()
 		{
-			// getGoalsNumInSeason & getAssistNumInSeason & getScoreAverage & numOfGodenGoals		
+			// getGoalsNumInSeason & getAssistNumInSeason		
 			cout<<"--------------------------------------------------"<<endl;
 			cout<<"==========Ability To Opperate Renewable Contract Of Forward=========="<<endl;		
-			if(this->getGoalsNumInSeason() > 6  && this->getAssistNumInSeason()  > 4 && this->getScoreAverage() > 3 && this->numOfGodenGoals > 2)
+			if(this->getGoalsNumInSeason() > 6  && this->getAssistNumInSeason()  > 4 )
 				cout<<"The opperated renewable contract is absolutely happen!"<<endl;
-			else if(this->getGoalsNumInSeason() > 4  && this->getAssistNumInSeason()  > 2 && this->getScoreAverage() > 2 && this->numOfGodenGoals > 2)
+			else if(this->getGoalsNumInSeason() > 4  && this->getAssistNumInSeason()  > 2 )
 				cout<<"The opperated renewable contract is uncertain!"<<endl;
-			else if(this->getGoalsNumInSeason() == 0  && this->getAssistNumInSeason()  == 0 && this->getScoreAverage() == 0 && this->numOfGodenGoals < 2)
+			else if(this->getGoalsNumInSeason() == 0  && this->getAssistNumInSeason()  == 0)
 				cout<<"There have no for opperating renewable contract!"<<endl;
 		}
-		void valueBringingLastSeason()
-		{
-			// getEscapePressing & getPassingBall & getShootBall & getHeader & getSpecialGoals		
-			cout<<"--------------------------------------------------"<<endl;
-			cout<<"==========Value Bringing Last Season Of Forward=========="<<endl;
-			if(this->getEscapePressing() == "best" && this->getPassingBall() == "best" && this->getShootBall() == "best" && this->getHeader() == "best" && this->getSpecialGoals() == "best")
-				cout<<"The value bringing last season is the CHAMPIONSHIP of the Season belong to the Team!"<<endl;
-				cout<<"The BEST player in this season!"<<endl;
-				cout<<"Being on the list to receive THE GODEN BALL!"<<endl;
-			if((this->getEscapePressing() != "good" || this->getEscapePressing() != "best") && (this->getPassingBall() != "good" || this->getPassingBall() != "best")&& (this->getShootBall() != "good" || this->getShootBall() != "best")&& (this->getHeader() != "good" || this->getHeader() != "best") && (this->getSpecialGoals() != "good" || this->getSpecialGoals() != "best"))
-				cout<<"There have no value for bringing to the Team in last season!"<<endl;
-		}		
 };
  class listForward:public Forward
  {
  	public:
+ 		string password;
  		vector<Forward> v;
  		void inputlist()
  		{
  			int n;
- 			cout<<"Nhap n: ";
+ 			cout<<"Input number of Forwards: ";
  			cin>>n;
  			for(int i=0;i<n;i++)
  			{
@@ -709,10 +599,35 @@ class Forward:public Player
 				cout<<"The player who you want to find are not in team!"<<endl;
 			}
 		}
+	void chooseTeam()
+	{
+		string nameOfCoach;
+		cout<<"Input the name of Coach: ";
+		cin.ignore();
+		getline(cin,nameOfCoach);
+		do{
+			cout<<"Password: ";
+			getline(cin,this->password);
+		}while(this->password != "nhomsieucapvippro");
+		cout<<"Choose your choice in tactics"<<endl;
+		cout<<"1. 1 - 4 - 3 - 3 "<<endl;
+		cout<<"2. 1 - 3 - 4 - 3 "<<endl;
+		int luachon;
+		cout<<"Your choice: ";
+		cin>>luachon;
+		switch(luachon)
+		{
+			case 1:
+				
+		}
+	}
+
  };
-int main() {
+int main()
+{
 	listForward l;
-	l.inputlist();
-	l.checkForward();
+	l.chooseTeam();
 	return 0;
 }
+
+
