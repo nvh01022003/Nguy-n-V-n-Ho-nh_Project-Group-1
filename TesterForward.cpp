@@ -326,13 +326,18 @@ class Player:public Person
 		void output()
 		{
 			cout<<"--------------------------------------------------"<<endl;
-			cout<<"                         OUTPUT THE PLAYER'S INFORMATION'"<<endl;
+			cout<<"         OUTPUT THE PLAYER'S INFORMATION'"<<endl;
 			Person::output();
-			cout<<"Number of shirt: "<<numberOfShirt<<"  "<<"Height: "<<height<<"  "<<"Weight: "<<weight<<endl;                
-			cout<<"Injury: "<<injury<<"  "<<"Appearance: "<<Appearance<<endl;
-			cout<<"Number of Yellow Card: "<<numOfYellowCard<<"  "<<"Number of Red Card: "<<numOfRedCard<<"  "<<endl;
+			cout<<"Number of shirt: "<<numberOfShirt<<endl;
+			cout<<"Height: "<<height<<endl;
+			cout<<"Weight: "<<weight<<endl;                
+			cout<<"Injury: "<<injury<<endl;
+			cout<<"Appearance: "<<Appearance<<endl;
+			cout<<"Number of Yellow Card: "<<numOfYellowCard<<endl;
+			cout<<"Number of Red Card: "<<numOfRedCard<<"  "<<endl;
 			cout<<"The technique stat: "<<techniqueStat<<endl;
-			cout<<"The number of assistance in Season: "<<assistNumInSeason<<"  "<<"The number of goals in Season: "<<goalsNumInSeason<<endl;		
+			cout<<"The number of assistance in Season: "<<assistNumInSeason<<endl;
+			cout<<"The number of goals in Season: "<<goalsNumInSeason<<endl;		
 		}
 		void longOrShortTermRest()
 		{
@@ -599,7 +604,7 @@ class Forward:public Player
 				cout<<"The player who you want to find are not in team!"<<endl;
 			}
 		}
-	void chooseTeam()
+/*	void chooseTeam()
 	{
 		string nameOfCoach;
 		cout<<"Input the name of Coach: ";
@@ -620,13 +625,23 @@ class Forward:public Player
 			case 1:
 				
 		}
-	}
+	}*/
 
  };
 int main()
 {
-	listForward l;
-	l.chooseTeam();
+	Forward f1("ST001","30/04/1985",10001,"Cristiano Ronaldo",37,1000000,7,93,1,2,97,25,75,187,80,"no","ST","good","good","best",25);
+	Forward f2("RW001","24/06/1987",10002,"Lionel Messi ",35,1000000,10,95,2,1,99,45,85,168,64,"no","RW","best","good","best",25);
+	Forward f3("LW001","05/02/1992",10003,"Neymar Jr",30,900000,11,95,3,2,95,30,50,180,70,"normal injury","LW","normal","good","good",20);
+	Forward f4("ST002","03/10/1981",10004,"Zlatan Ibrahimovic",40,800000,8,93,3,3,90,20,70,192,85,"no","ST","normal","good","normal",18);
+	Forward f5("ST003","21/08/1988",10005,"Robert Lewandowski",33,850000,9,90,1,0,89,23,75,184,80,"normal injury","ST","best","good","good",23);
+	f1.output();
+	f2.output();
+	f3.output();
+	f4.output();
+	f5.output();
+//	listForward l;
+//	l.chooseTeam();
 	return 0;
 }
 
